@@ -15,6 +15,7 @@ public class Animal implements Serializable {
 	private boolean banho;
 	private boolean vacina;
 	private List<String> NotaFiscal;
+	private boolean cadastro;
 
 	public Animal(String nome, int tipo, int porte){
 		super();
@@ -24,35 +25,47 @@ public class Animal implements Serializable {
 		this.valor = 0;
 		this.banho = false;
 		this.vacina = false;
-		this.examinar = examinar;
+		this.examinar = false;
+		this.cadastro = false;
 
 	}
 
 	public Animal(){
 		super();
+		this.banho = false;
+		this.vacina = false;
+		this.examinar = false;
+		this.valor = 0;
 	}
 
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public int getTipo() {
 		return tipo;
 	}
+
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
+
 	public int getPorte() {
 		return porte;
 	}
+
 	public void setPorte(int porte) {
 		this.porte = porte;
 	}
+
 	public float getValor() {
 		return valor;
 	}
+
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
@@ -87,6 +100,25 @@ public class Animal implements Serializable {
 
 	public void setNotaFiscal(List<String> notaFiscal) {
 		NotaFiscal = notaFiscal;
+	}
+
+	public boolean isCadastro() {
+		return cadastro;
+	}
+
+	public void setCadastro(boolean cadastro) {
+		this.cadastro = cadastro;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	@Override
+	public String toString() {
+		return "Animal [nome=" + nome + ", tipo=" + tipo + ", porte=" + porte + ", valor=" + valor + ", examinar="
+				+ examinar + ", banho=" + banho + ", vacina=" + vacina + ", NotaFiscal=" + NotaFiscal + ", cadastro="
+				+ cadastro + "]";
 	}
 
 	/*Serviço vai adicionar a lista NotaFiscal o nome do serviço que foi executado mais em formato de string o valor do serviço
