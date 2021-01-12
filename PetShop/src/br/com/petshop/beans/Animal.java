@@ -4,9 +4,9 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Animal implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private String nome;
 	private int tipo;
 	private int porte;
@@ -15,20 +15,23 @@ public class Animal implements Serializable {
 	private boolean banho;
 	private boolean vacina;
 	private List<String> NotaFiscal;
-	
+
 	public Animal(String nome, int tipo, int porte){
-	super();
-	this.nome = nome;
-	this.tipo = tipo;
-	this.porte = porte;
-	this.valor = 0;
-	
+		super();
+		this.nome = nome;
+		this.tipo = tipo;
+		this.porte = porte;
+		this.valor = 0;
+		this.banho = false;
+		this.vacina = false;
+		this.examinar = examinar;
+
 	}
-		
+
 	public Animal(){
 		super();
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -53,7 +56,7 @@ public class Animal implements Serializable {
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
-	
+
 	public boolean isExaminar() {
 		return examinar;
 	}
@@ -78,23 +81,23 @@ public class Animal implements Serializable {
 		this.vacina = vacina;
 	}
 
-	public ArrayList<String> getNotaFiscal() {
+	public List<String> getNotaFiscal() {
 		return NotaFiscal;
 	}
 
-	public void setNotaFiscal(ArrayList<String> notaFiscal) {
+	public void setNotaFiscal(List<String> notaFiscal) {
 		NotaFiscal = notaFiscal;
 	}
-	
+
 	/*Serviço vai adicionar a lista NotaFiscal o nome do serviço que foi executado mais em formato de string o valor do serviço
 	o valor do serviço vai ser acrescentado ao montate de pagamento do animal.
-	*/
+	 */
 	public void servico(String nomeServico,float valor){
-	
-	String frase = "Nome do Serviço: "+nomeServico+" valor do Serviço: "+ valor;
-	this.NotaFiscal.add(frase);
-	this.valor += valor;
-	
+
+		String frase = "Nome do Serviço: "+nomeServico+" valor do Serviço: "+ valor;
+		this.NotaFiscal.add(frase);
+		this.valor += valor;
+
 	}
-	
+
 }
