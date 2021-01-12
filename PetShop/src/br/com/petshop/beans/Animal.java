@@ -114,14 +114,7 @@ public class Animal implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	@Override
-	public String toString() {
-		return "Animal [nome=" + nome + ", tipo=" + tipo + ", porte=" + porte + ", valor=" + valor + ", examinar="
-				+ examinar + ", banho=" + banho + ", vacina=" + vacina + ", NotaFiscal=" + NotaFiscal + ", cadastro="
-				+ cadastro + "]";
-	}
-
+	
 	/*
 	Serviço vai adicionar a lista NotaFiscal o nome do serviço que foi executado mais em formato de string o valor do serviço
 	o valor do serviço vai ser acrescentado ao montate de pagamento do animal.
@@ -129,7 +122,7 @@ public class Animal implements Serializable {
 	
 	public Animal servico(Animal animal,String nomeServico,float valor){
 
-		String frase = "Nome do Serviço: "+nomeServico+" valor do Serviço: "+ valor;
+		String frase = "Nome do Serviço: "+nomeServico+" valor do Serviço: "+ valor+"R$";
 		
 		if(animal.getNotaFiscal() == null){
 			List<String> servicos = new ArrayList<String>();
@@ -145,5 +138,14 @@ public class Animal implements Serializable {
 		return animal;
 
 	}
+	
+	@Override
+	public String toString() {
+		return "Animal [nome=" + nome + ", tipo=" + tipo + ", porte=" + porte + ", valor=" + valor + ", examinar="
+				+ examinar + ", banho=" + banho + ", vacina=" + vacina + ", NotaFiscal=" + NotaFiscal + ", cadastro="
+				+ cadastro + "]";
+	}
+
+	
 
 }

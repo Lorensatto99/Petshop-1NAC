@@ -2,16 +2,19 @@ package br.com.petshop.test;
 
 import br.com.petshop.beans.Animal;
 import br.com.petshop.beans.Petshop;
+import br.com.petshop.beans.Util;
 
 public class Teste {
 	public static void main(String[] args) {
 		Petshop petshop = new Petshop();
 		
 		Animal animal = petshop.cadastrar();
-//		System.out.println(animal.getTipo());
 		
-		petshop.banho(animal);
+		/*
+		 * Petshop.banho(animal);
+		 */
 		
-		System.out.println(animal.toString());
+		
+		
 	}
 }
