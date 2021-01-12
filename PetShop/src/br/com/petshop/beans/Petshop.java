@@ -22,23 +22,24 @@ public class Petshop {
 
 	public void examinar(Animal animal) {
 		animal.setExaminar(true);
-		animal.servico("Examinar", 70);
+		animal.servico(animal,"Examinar", 70);
 	}
 
 	public void banho(Animal animal) {
 		if(animal.isBanho() == false) {
 			if(animal.getPorte() == 0) {
 				animal.setBanho(true);
-				animal.servico("Banho:Pequeno Porte", 40);
+				animal.servico(animal,"Banho:Pequeno Porte", 40);
 			}else if (animal.getPorte() == 1) {
 				animal.setBanho(true);
-				animal.servico("Banho:Médio Porte", 50);
+				animal.servico(animal,"Banho:Médio Porte", 50);
 			}else if (animal.getPorte() == 2) {
 				animal.setBanho(true);
-				animal.servico("Banho:Grande Porte", 60);
+				animal.servico(animal,"Banho:Grande Porte", 60);
 			}	
+			Util.caixaInfo("Banho no animal foi dado!");
 		}else{
-			Util.caixaInfo("O animal ja tomou banho!");
+			Util.caixaErro("O animal ja tomou banho!");
 		}
 	}
 
@@ -46,16 +47,16 @@ public class Petshop {
 		if(animal.isVacina() == false) {
 			if(animal.getTipo() == 0 ) {
 				animal.setVacina(true);
-				animal.servico("Vacina:Gato", 100);
+				animal.servico(animal,"Vacina:Gato", 100);
 			}else if (animal.getPorte() == 1) {
 				animal.setVacina(true);
-				animal.servico("Vacina:Cachorro", 100);
+				animal.servico(animal,"Vacina:Cachorro", 100);
 			}else if (animal.getPorte() == 2) {
 				animal.setVacina(true);
-				animal.servico("Vacina:Outros animais", 150);
+				animal.servico(animal,"Vacina:Outros animais", 150);
 			}	
 		}else{
-			Util.caixaInfo("O animal ja tomou banho!");
+			Util.caixaErro("O animal ja tomou Vacina!");
 		}
 	}
 	

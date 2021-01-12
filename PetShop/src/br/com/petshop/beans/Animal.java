@@ -1,6 +1,7 @@
 package br.com.petshop.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Animal implements Serializable {
@@ -121,14 +122,27 @@ public class Animal implements Serializable {
 				+ cadastro + "]";
 	}
 
-	/*Serviço vai adicionar a lista NotaFiscal o nome do serviço que foi executado mais em formato de string o valor do serviço
+	/*
+	Serviço vai adicionar a lista NotaFiscal o nome do serviço que foi executado mais em formato de string o valor do serviço
 	o valor do serviço vai ser acrescentado ao montate de pagamento do animal.
-	 */
-	public void servico(String nomeServico,float valor){
+	*/
+	
+	public Animal servico(Animal animal,String nomeServico,float valor){
 
 		String frase = "Nome do Serviço: "+nomeServico+" valor do Serviço: "+ valor;
-		this.NotaFiscal.add(frase);
+		
+		if(animal.getNotaFiscal() == null){
+			List<String> servicos = new ArrayList<String>();
+			servicos.add(frase);
+			animal.setNotaFiscal(servicos);
+		}else{
+			List<String> tempServ = animal.getNotaFiscal();
+			tempServ.add(frase);
+			animal.setNotaFiscal(tempServ);
+		}		
 		this.valor += valor;
+		
+		return animal;
 
 	}
 

@@ -15,8 +15,12 @@ public class Util {
 
 	}
 	
-	public static void caixaInfo(String mensagem) {
+	public static void caixaErro(String mensagem) {
 		JOptionPane.showMessageDialog(null, mensagem, "Erro", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public static void caixaInfo(String mensagem) {
+		JOptionPane.showMessageDialog(null, mensagem, "Aviso!", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }

@@ -10,8 +10,8 @@ public class Teste {
 		Animal animal = petshop.cadastrar();
 //		System.out.println(animal.getTipo());
 		
+		petshop.banho(animal);
 		
-		
-;		
+		System.out.println(animal.toString());
 	}
 }
