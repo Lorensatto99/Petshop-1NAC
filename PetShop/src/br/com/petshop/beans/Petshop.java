@@ -1,12 +1,11 @@
 package br.com.petshop.beans;
-
 public class Petshop {
 
 	public Petshop() {
 		super();
 	}
 
-	public Animal cadastrar() {
+	public Animal Cadastrar() {
 		Animal animal = new Animal();
 
 		animal.setNome(Util.caixaDeDialogo("Qual o nome do seu animal"));
@@ -20,12 +19,18 @@ public class Petshop {
 		return animal;
 	}
 
-	public void examinar(Animal animal) {
-		animal.setExaminar(true);
-		animal.servico(animal,"Examinar", 70);
+	public Animal Examinar(Animal animal) {
+		if(animal.isExaminar()== false) {
+			animal.setExaminar(true);
+			animal.servico(animal,"Examinar", 70);
+			Util.caixaInfo("Foi Examinado");
+		}else {
+			Util.caixaErro("O Animal ja foi Examinado!");
+		}
+		return animal;
 	}
 
-	public void banho(Animal animal) {
+	public Animal Banho(Animal animal) {
 		if(animal.isBanho() == false) {
 			if(animal.getPorte() == 0) {
 				animal.setBanho(true);
@@ -41,9 +46,10 @@ public class Petshop {
 		}else{
 			Util.caixaErro("O animal ja tomou banho!");
 		}
+		return animal;
 	}
 
-	public void Vacinar(Animal animal) {
+	public Animal Vacinar(Animal animal) {
 		if(animal.isVacina() == false) {
 			if(animal.getTipo() == 0 ) {
 				animal.setVacina(true);
@@ -58,9 +64,31 @@ public class Petshop {
 		}else{
 			Util.caixaErro("O animal ja tomou Vacina!");
 		}
+		
+		return animal;
 	}
 	
-	public void Total(Animal animal){
-		
+	//este método vai retornar todos os itens dentro da lista Nota fiscal juntamente com o valor total a ser pago!
+		public void Total(Animal animal){
+			
 	}	
+	
+	public void Rotina(Animal animal) {
+		int opcao = 0;
+		while (opcao != 3) {
+			opcao = Util.caixaDeOpcoes2("Petshop", "Escolha o Serviço que deseja realizar", "Examinar", "Banho", "Vacinar", "Finalizar o serviço");
+			System.out.println(opcao);
+			if(opcao == 0) {
+				animal = this.Examinar(animal);
+			}else if(opcao == 1) {
+				animal = this.Banho(animal);
+			}else if (opcao == 2) {
+				animal = this.Vacinar(animal);
+			}else if (opcao == 3) {
+				this.Total(animal);
+			}
+		}
+	}
+	
+	
 }

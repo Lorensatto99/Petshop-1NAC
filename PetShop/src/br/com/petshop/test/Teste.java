@@ -8,11 +8,10 @@ public class Teste {
 	public static void main(String[] args) {
 		Petshop petshop = new Petshop();
 		
-		Animal animal = petshop.cadastrar();
+		Animal animal = petshop.Cadastrar();
 		
-		/*
-		 * Petshop.banho(animal);
-		 */
+		
+		petshop.Rotina(animal);
 		
 		
 		

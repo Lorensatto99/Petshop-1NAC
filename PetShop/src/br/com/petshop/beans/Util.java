@@ -22,5 +22,13 @@ public class Util {
 	public static void caixaInfo(String mensagem) {
 		JOptionPane.showMessageDialog(null, mensagem, "Aviso!", JOptionPane.INFORMATION_MESSAGE);
 	}
-
+	
+	public static int caixaDeOpcoes2(String titulo,String pergunta,String opcao1,String opcao2,String opcao3,String opcao4) {
+		String [] palavras= {opcao1,opcao2,opcao3,opcao4};
+		int resposta = JOptionPane.showOptionDialog(null, pergunta, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, palavras, "Cancelar");
+		return resposta;
+	}
+		
 }
+
+
