@@ -1,5 +1,7 @@
 package br.com.petshop.beans;
 
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
 public class Util {
@@ -21,6 +23,10 @@ public class Util {
 	
 	public static void caixaInfo(String mensagem) {
 		JOptionPane.showMessageDialog(null, mensagem, "Aviso!", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	public static void caixaInfo2(String [] lista) {
+		JOptionPane.showMessageDialog(null, lista, "Aviso!", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	public static int caixaDeOpcoes2(String titulo,String pergunta,String opcao1,String opcao2,String opcao3,String opcao4) {

@@ -23,7 +23,7 @@ public class Petshop {
 		if(animal.isExaminar()== false) {
 			animal.setExaminar(true);
 			animal.servico(animal,"Examinar", 70);
-			Util.caixaInfo("Foi Examinado");
+			Util.caixaInfo("Serviço Registrado!");;
 		}else {
 			Util.caixaErro("O Animal ja foi Examinado!");
 		}
@@ -42,7 +42,7 @@ public class Petshop {
 				animal.setBanho(true);
 				animal.servico(animal,"Banho:Grande Porte", 60);
 			}	
-			Util.caixaInfo("Banho no animal foi dado!");
+			Util.caixaInfo("Serviço Registrado!");
 		}else{
 			Util.caixaErro("O animal ja tomou banho!");
 		}
@@ -61,6 +61,7 @@ public class Petshop {
 				animal.setVacina(true);
 				animal.servico(animal,"Vacina:Outros animais", 150);
 			}	
+			Util.caixaInfo("Serviço Registrado!");
 		}else{
 			Util.caixaErro("O animal ja tomou Vacina!");
 		}
@@ -70,8 +71,9 @@ public class Petshop {
 	
 	//este método vai retornar todos os itens dentro da lista Nota fiscal juntamente com o valor total a ser pago!
 		public void Total(Animal animal){
+			String [] lista;
 			
-	}	
+		}	
 	
 	public void Rotina(Animal animal) {
 		int opcao = 0;
