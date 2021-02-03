@@ -2,7 +2,7 @@
 
 Repository for delivery of work to fiap university
 
-project that involves a simple service registration system in a petshop where the registered animal is the customer who keeps the services.
+project that involves a simple service registration system in a petshop, where the registered animal is the customer who keeps the services.
 
 project involves:
 repeat loop
