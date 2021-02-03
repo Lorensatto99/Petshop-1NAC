@@ -115,6 +115,16 @@ public class Animal implements Serializable {
 		return serialVersionUID;
 	}
 	
+	public String SGetNotaFiscal(List<String> NotaFiscal) {
+		String lista = "";
+		for (int i =0;i< NotaFiscal.size();i++) {
+			lista += NotaFiscal.get(i);
+		}		
+		return lista;
+	}
+	
+	
+	
 	/*
 	Serviço vai adicionar a lista NotaFiscal o nome do serviço que foi executado mais em formato de string o valor do serviço
 	o valor do serviço vai ser acrescentado ao montate de pagamento do animal.
@@ -122,7 +132,7 @@ public class Animal implements Serializable {
 	
 	public Animal servico(Animal animal,String nomeServico,float valor){
 
-		String frase = "Nome do Serviço: "+nomeServico+" valor do Serviço: "+ valor+"R$";
+		String frase = "Nome do Serviço: "+nomeServico+ "|"+" valor do Serviço: "+"R$"+ valor+"\n";
 		
 		if(animal.getNotaFiscal() == null){
 			List<String> servicos = new ArrayList<String>();

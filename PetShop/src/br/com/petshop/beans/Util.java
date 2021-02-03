@@ -25,8 +25,8 @@ public class Util {
 		JOptionPane.showMessageDialog(null, mensagem, "Aviso!", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
-	public static void caixaInfo2(String [] lista) {
-		JOptionPane.showMessageDialog(null, lista, "Aviso!", JOptionPane.INFORMATION_MESSAGE);
+	public static void caixaInfo2(String NotaFiscal) {
+		JOptionPane.showMessageDialog(null, NotaFiscal, "Aviso!", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 	public static int caixaDeOpcoes2(String titulo,String pergunta,String opcao1,String opcao2,String opcao3,String opcao4) {

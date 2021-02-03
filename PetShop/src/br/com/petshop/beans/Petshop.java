@@ -54,10 +54,10 @@ public class Petshop {
 			if(animal.getTipo() == 0 ) {
 				animal.setVacina(true);
 				animal.servico(animal,"Vacina:Gato", 100);
-			}else if (animal.getPorte() == 1) {
+			}else if (animal.getTipo() == 1) {
 				animal.setVacina(true);
 				animal.servico(animal,"Vacina:Cachorro", 100);
-			}else if (animal.getPorte() == 2) {
+			}else if (animal.getTipo() == 2) {
 				animal.setVacina(true);
 				animal.servico(animal,"Vacina:Outros animais", 150);
 			}	
@@ -65,32 +65,41 @@ public class Petshop {
 		}else{
 			Util.caixaErro("O animal ja tomou Vacina!");
 		}
-		
+
 		return animal;
 	}
-	
+
 	//este método vai retornar todos os itens dentro da lista Nota fiscal juntamente com o valor total a ser pago!
-		public void Total(Animal animal){
-			String [] lista;
-			
-		}	
-	
+	public void Total(Animal animal){
+		String total = animal.SGetNotaFiscal(animal.getNotaFiscal());
+		String valor = "TOTAL::"+ Float.toString(animal.getValor());
+		total += "\n";
+		total += valor + "\n";
+		total += "NOME DO ANIMAL: R$" + animal.getNome();
+
+		Util.caixaInfo(total);
+	}	
+
 	public void Rotina(Animal animal) {
 		int opcao = 0;
 		while (opcao != 3) {
 			opcao = Util.caixaDeOpcoes2("Petshop", "Escolha o Serviço que deseja realizar", "Examinar", "Banho", "Vacinar", "Finalizar o serviço");
-			System.out.println(opcao);
-			if(opcao == 0) {
-				animal = this.Examinar(animal);
-			}else if(opcao == 1) {
-				animal = this.Banho(animal);
-			}else if (opcao == 2) {
-				animal = this.Vacinar(animal);
-			}else if (opcao == 3) {
-				this.Total(animal);
+			try {
+				if(opcao == 0) {
+					animal = this.Examinar(animal);
+				}else if(opcao == 1) {
+					animal = this.Banho(animal);
+				}else if (opcao == 2) {
+					animal = this.Vacinar(animal);
+				}else if (opcao == 3) {
+					this.Total(animal);
+				}
+			}catch (Exception e) {
+				Util.caixaErro("Não Foi Possível Finalizar o Registro!");
+				e.printStackTrace();
 			}
 		}
 	}
-	
-	
+
+
 }
